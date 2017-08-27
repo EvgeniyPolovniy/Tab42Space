@@ -1,0 +1,97 @@
+@mixin min_desktop {
+  @media (max-width: #{$desktop_width1}) {
+    @content;
+  }
+}
+@mixin desktop1 {
+  @media (min-width: #{$desktop_width1}) and (max-width: #{$desktop_width2}) {
+    @content;
+  }
+}
+@mixin desktop2 {
+  @media (min-width: #{$desktop_width2}) and (max-width: #{$desktop_width3}) {
+    @content;
+  }
+}
+@mixin desktop3 {
+  @media (min-width: #{$desktop_width3}) and (max-width: #{$desktop_width4}) {
+    @content;
+  }
+}
+@mixin max_desktop {
+  @media (min-width: #{$desktop_width4}) {
+    @content;
+  }
+}
+
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius: 5px) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius: 5px) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius: 5px) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius: 5px) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin transition( $transition-property: all, $transition-time: .2s, $transition-method: ease ) {
+  -webkit-transition: $transition-property $transition-time $transition-method;
+  -moz-transition: $transition-property $transition-time $transition-method;
+  -ms-transition: $transition-property $transition-time $transition-method;
+  -o-transition: $transition-property $transition-time $transition-method;
+  transition: $transition-property $transition-time $transition-method;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
